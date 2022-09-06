@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.add.NoteFragment">
+    <!--Close-->
+    <ImageView
+        android:id="@+id/closeImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:contentDescription="@string/close"
+        android:rotation="45"
+        android:src="@drawable/ic_round_add_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Title-->
+    <EditText
+        android:id="@+id/titleEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_rounded_yellow_light"
+        android:fontFamily="@font/abel"
+        android:hint="@string/title"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:textColorHint="@color/yellowDark"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/closeImg" />
+
+    <!--Description-->
+    <EditText
+        android:id="@+id/descriptionEdt"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_rounded_yellow_light"
+        android:fontFamily="@font/abel"
+        android:gravity="start"
+        android:hint="@string/description"
+        android:padding="10dp"
+        android:textColorHint="@color/yellowDark"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleEdt" />
+
+    <!--Content-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentLyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_rounded_gray_light"
+        app:layout_constraintTop_toBottomOf="@id/descriptionEdt">
+        <!--Category-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lytCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--Title-->
+            <TextView
+                android:id="@+id/titleCategory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abel"
+                android:padding="10dp"
+                android:text="@string/category"
+                android:textColor="@color/grayDark"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--Spinner-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSpinnerCategory"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="1dp"
+                app:layout_constraintBottom_toBottomOf="@id/titleCategory"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleCategory"
+                app:layout_constraintTop_toTopOf="@id/titleCategory">
+
+                <Spinner
+                    android:id="@+id/spinnerCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--Priority-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lytPriority"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lytCategory">
+            <!--Title-->
+            <TextView
+                android:id="@+id/titlePriority"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abel"
+                android:padding="10dp"
+                android:text="@string/priority"
+                android:textColor="@color/grayDark"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--Spinner-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSpinnerPriority"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="1dp"
+                app:layout_constraintBottom_toBottomOf="@id/titlePriority"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titlePriority"
+                app:layout_constraintTop_toTopOf="@id/titlePriority">
+
+                <Spinner
+                    android:id="@+id/spinnerPriority"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--Save-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveNote"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/green"
+        android:textColor="@color/white"
+        android:fontFamily="@font/abel"
+        android:paddingHorizontal="50dp"
+        android:text="@string/save"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        android:layout_marginVertical="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contentLyt" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

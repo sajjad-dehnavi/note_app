@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MvpFirst</string>
+    <string name="noteAppName">My Note</string>
+    <string name="search">Search</string>
+    <string name="filter">Filter</string>
+    <string name="add_note">Add Note</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="priority">Priority</string>
+    <string name="category">Category</string>
+    <string name="save">Save</string>
+    <string name="close">Close</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+</resources>
